@@ -1,0 +1,22 @@
+{
+  "name": "@pouya-eghbali/lorax",
+  "version": "1.0.0",
+  "description": "Tree input / editor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pouya-eghbali/lorax.git"
+  },
+  "keywords": [
+    "Tree"
+  ],
+  "author": "Pouya Eghbali",
+  "license": "SEE LICENCE IN LICENSE.MD",
+  "bugs": {
+    "url": "https://github.com/pouya-eghbali/lorax/issues"
+  },
+  "homepage": "https://github.com/pouya-eghbali/lorax#readme"
+}

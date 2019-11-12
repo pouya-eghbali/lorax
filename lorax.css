@@ -1,0 +1,66 @@
+.lorax {
+  box-sizing: border-box;
+  padding: 1em;
+}
+.lorax-node {
+  width: fit-content;
+  padding: .5em 1em;
+  padding-bottom: 0;
+}
+.lorax-menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 6px 32px rgba(0, 0, 0, .4);
+  border: 1px solid rgba(0,0,0,.1);
+  padding: .5em;
+  z-index: 10000000;
+  background: #fff;
+  visibility: hidden;
+}
+.lorax-menu a {
+  cursor: pointer;
+  display: inline-block;
+  padding: .5em 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+.lorax-menu a:hover {
+  background: rgba(0,0,0,.1);
+}
+.lorax-menu-closed {
+  animation: .1s ease-in lorax-menu-close-animation forwards;
+}
+@keyframes lorax-menu-close-animation {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(.4);
+    visibility: hidden;
+  }
+}
+.lorax-menu-open {
+  animation: .1s linear lorax-menu-open-animation forwards;
+}
+@keyframes lorax-menu-open-animation {
+  0% {
+    opacity: 0;
+    transform: scale(.4);
+    transform-origin: top left;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+  }
+}
+.lorax-node-display {
+  cursor: pointer;
+}
+.lorax-drag-enter {
+  border: 1px dashed #666;
+}
