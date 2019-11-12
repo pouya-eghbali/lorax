@@ -1,8 +1,9 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = global || self, global.Lorax = factory());
-}(this, (function () { 'use strict';
+    typeof define === 'function' && define.amd ? define(factory) :
+      (global = global || self, global.Lorax = factory());
+}(this, (function () {
+  'use strict';
 
   class Lorax {
     constructor(el) {
@@ -78,8 +79,10 @@
       this.menu.classList.add('lorax-menu-open');
     }
     closeMenu() {
-      this.menu.classList.add('lorax-menu-closed');
-      this.menu.classList.remove('lorax-menu-open');
+      if (this.menu.classList.contains('lorax-menu-open')) {
+        this.menu.classList.add('lorax-menu-closed');
+        this.menu.classList.remove('lorax-menu-open');
+      }
     }
     initDrag() {
 
