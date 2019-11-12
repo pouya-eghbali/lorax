@@ -1,6 +1,7 @@
 .lorax {
   box-sizing: border-box;
   padding: 1em;
+  position: relative;
 }
 .lorax-node {
   width: fit-content;
