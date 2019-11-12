@@ -60,6 +60,7 @@ export default class Lorax {
   addNodeToTarget() {
     const node = this.makeNode()
     this.target.querySelector('.lorax-child-nodes').appendChild(node)
+    return node
   }
   removeTargetNode() {
     this.target.remove()
@@ -106,5 +107,19 @@ export default class Lorax {
     const { childNodes } = parent.querySelector('.lorax-child-nodes')
     const children = [...childNodes].map(el => this.value(el))
     return { value, children }
+  }
+  setNodeValue(node, value) {
+    const display = node.querySelector('.lorax-node-display')
+    display.dataset.value = value
+  }
+  restore(values, node) {
+    const parent = node || this.root
+    const { value, children } = values
+    this.setNodeValue(parent, value)
+    children.forEach(values => {
+      this.target = parent
+      const node = this.addNodeToTarget()
+      this.restore(values, node)
+    })
   }
 }
