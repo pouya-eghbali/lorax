@@ -122,6 +122,7 @@
       const parent = node || this.root;
       const { value, children } = values;
       this.setNodeValue(parent, value);
+      if (!children) return
       children.forEach(values => {
         this.target = parent;
         const node = this.addNodeToTarget();
