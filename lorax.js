@@ -1,4 +1,4 @@
-class Lorax {
+export default class Lorax {
   constructor(el) {
     this.el = el
     this.data = {}
@@ -107,5 +107,3 @@ class Lorax {
     return { value, children }
   }
 }
-
-module.exports = Lorax
