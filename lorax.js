@@ -42,8 +42,9 @@ export default class Lorax {
     this.el.addEventListener('contextmenu', event => {
       event.preventDefault()
       this.target = event.target.closest('.lorax-node')
-      const { offsetX, offsetY } = event
-      this.openMenu(offsetX, offsetY)
+      const { pageX, pageY } = event
+      const { left: deltaX, height: deltaH } = this.el.getBoundingClientRect()
+      this.openMenu(pageX - deltaX, pageY - deltaH + 50)
     })
     this.addBtn.addEventListener('click', event => {
       this.addNodeToTarget()
