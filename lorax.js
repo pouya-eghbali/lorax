@@ -23,7 +23,6 @@ export default class Lorax {
     node.addEventListener('dragenter', this.dragEnter)
     node.addEventListener('dragleave', this.dragLeave)
     node.addEventListener('drop', this.drop)
-    node.addEventListener('click', this.nodeClick)
     return node
   }
   initMenu() {
@@ -72,8 +71,10 @@ export default class Lorax {
     this.menu.classList.add('lorax-menu-open')
   }
   closeMenu() {
-    this.menu.classList.add('lorax-menu-closed')
-    this.menu.classList.remove('lorax-menu-open')
+    if (this.menu.classList.has('lorax-menu-open')) {
+      this.menu.classList.add('lorax-menu-closed')
+      this.menu.classList.remove('lorax-menu-open')
+    }
   }
   initDrag() {
 
