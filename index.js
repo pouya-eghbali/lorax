@@ -1,9 +1,8 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-    typeof define === 'function' && define.amd ? define(factory) :
-      (global = global || self, global.Lorax = factory());
-}(this, (function () {
-  'use strict';
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global = global || self, global.Lorax = factory());
+}(this, (function () { 'use strict';
 
   class Lorax {
     constructor(el) {
@@ -30,7 +29,6 @@
       node.addEventListener('dragenter', this.dragEnter);
       node.addEventListener('dragleave', this.dragLeave);
       node.addEventListener('drop', this.drop);
-      node.addEventListener('click', this.nodeClick);
       return node
     }
     initMenu() {
@@ -68,6 +66,7 @@
     addNodeToTarget() {
       const node = this.makeNode();
       this.target.querySelector('.lorax-child-nodes').appendChild(node);
+      return node
     }
     removeTargetNode() {
       this.target.remove();
@@ -114,6 +113,20 @@
       const { childNodes } = parent.querySelector('.lorax-child-nodes');
       const children = [...childNodes].map(el => this.value(el));
       return { value, children }
+    }
+    setNodeValue(node, value) {
+      const display = node.querySelector('.lorax-node-display');
+      display.dataset.value = value;
+    }
+    restore(values, node) {
+      const parent = node || this.root;
+      const { value, children } = values;
+      this.setNodeValue(parent, value);
+      children.forEach(values => {
+        this.target = parent;
+        const node = this.addNodeToTarget();
+        this.restore(values, node);
+      });
     }
   }
 
