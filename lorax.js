@@ -71,7 +71,7 @@ export default class Lorax {
     this.menu.classList.add('lorax-menu-open')
   }
   closeMenu() {
-    if (this.menu.classList.has('lorax-menu-open')) {
+    if (this.menu.classList.contains('lorax-menu-open')) {
       this.menu.classList.add('lorax-menu-closed')
       this.menu.classList.remove('lorax-menu-open')
     }
