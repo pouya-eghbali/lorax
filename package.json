@@ -1,6 +1,6 @@
 {
   "name": "lorax-tree-editor",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Tree input / editor",
   "main": "index.js",
   "scripts": {
