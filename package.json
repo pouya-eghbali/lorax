@@ -1,5 +1,5 @@
 {
-  "name": "@pouya-eghbali/lorax",
+  "name": "lorax-tree-editor",
   "version": "1.0.0",
   "description": "Tree input / editor",
   "main": "index.js",
