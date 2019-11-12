@@ -43,8 +43,8 @@ export default class Lorax {
       event.preventDefault()
       this.target = event.target.closest('.lorax-node')
       const { pageX, pageY } = event
-      const { left: deltaX, height: deltaH } = this.el.getBoundingClientRect()
-      this.openMenu(pageX - deltaX, pageY - deltaH + 50)
+      const { left: deltaX, top: deltaY } = this.el.getBoundingClientRect()
+      this.openMenu(pageX - deltaX, pageY - deltaY)
     })
     this.addBtn.addEventListener('click', event => {
       this.addNodeToTarget()
