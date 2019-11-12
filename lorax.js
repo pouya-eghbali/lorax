@@ -36,7 +36,7 @@ export default class Lorax {
     this.removeBtn.innerText = 'Remove'
     this.menu.appendChild(this.addBtn)
     this.menu.appendChild(this.removeBtn)
-    document.body.appendChild(this.menu)
+    this.el.appendChild(this.menu)
   }
   installMenu() {
     this.el.addEventListener('contextmenu', event => {
